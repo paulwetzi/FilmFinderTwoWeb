@@ -27,9 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
 //   .then((response) => response.json())
 //   .then((data) => console.log(data));
 
-//NIIIIICEEEEE
+
 async function getMovieFromStorage(id) {
-  id = 2;
   const response = await fetch(
     "http://localhost:5043/storage?" + new URLSearchParams({ idToFind: id }),
     {
@@ -42,23 +41,22 @@ async function getMovieFromStorage(id) {
   console.log(data);
 }
 
-getMovieFromStorage(2);
+async function getAllMoviesFromStorage() {
+  const response = await fetch(
+    "http://localhost:5043/storage"
+    {
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+    }
+  );
+  const data = await response.json();
+  console.log(data);
+}
+
+getAllMoviesFromStorage();
 
 // response 200 is wanted!!!
-
-// Assuming you have a function fetchMoviesByStorage(storageId) to get movies based on storage ID from your API
-function fetchMoviesByStorage(storageId) {
-  // Fetch movies from your API based on storage ID
-  // Example API call using fetch:
-  // fetch(`your-api-endpoint/movies?storageId=${storageId}`)
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     // Process the fetched movies data here
-  //     // Call a function to display movies and pass the data
-  //     displayMovies(data);
-  //   })
-  //   .catch(error => console.error('Error:', error));
-}
 
 // Function to display storage dynamically
 function displayStorage(storages) {
@@ -74,7 +72,6 @@ function displayStorage(storages) {
     moviesContainer.appendChild(storageElement);
   });
 }
-
 
 // Function to display movies dynamically
 function displayMovies(movies) {
@@ -93,8 +90,8 @@ function displayMovies(movies) {
 
 // Function to handle click event on storage cards
 function handleStorageCardClick(event) {
-  const storageId = event.target.dataset.storageId; // Get the storage ID from the clicked card
-  fetchMoviesByStorage(storageId); // Fetch and display movies for the clicked storage
+  const id = event.target.dataset.id; // Get the storage ID from the clicked card
+  getMovieFromStorage(id); // Fetch and display movies for the clicked storage
 }
 
 // Call the function to fetch storage data and create storage cards when the page loads

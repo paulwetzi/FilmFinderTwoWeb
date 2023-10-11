@@ -56,15 +56,20 @@
             </div>
           </nav>
         </header>
-        <main class="has-text-centered" id="main-content">
+        <main class="has-text-centered m-3" id="main-content">
             <h1>Storage Page</h1>
+            <div class="m-3">
+              <input type="text" id="searchInput" class="input mb-3" placeholder="🔎Search">
+              <a href="postStorage.html"><button class="button is is-primary" >add Storage</button></a>
+            </div>
             <div class="cards-container" id="cards-container"></div>
-            <div class="movies-container" id="movies-container"></div>
+            <div id="filteredStoragesContainer"></div>
+
           </main>
           
     <footer>
 
     </footer>
-    <script src="script.js"></script>
+    <script src="storage.js"></script>
 </body>
 </html>

@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navbarBurgers.forEach((burger) => {
         burger.addEventListener("click", () => {
-            const targetId = burger.dataset.target;
-            const targetElement = document.getElementById(targetId);
-
-            burger.classList.toggle("is-active");
-            targetElement.classList.toggle("is-active");
+          const targetId = burger.dataset.target;
+          const targetElement = document.getElementById(targetId);
+    
+          burger.classList.toggle("is-active");
+          targetElement.classList.toggle("is-active");
         });
-    });
+      });
 
     async function postMovie(title, storageId) {
         const apiUrl = "http://localhost:5043/Movie/PostMovie";

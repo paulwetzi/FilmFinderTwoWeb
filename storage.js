@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navbarBurgers = document.querySelectorAll(".navbar-burger");
+  //   const navbarBurgers = document.querySelectorAll(".navbar-burger");
 
-  navbarBurgers.forEach((burger) => {
-    burger.addEventListener("click", () => {
-      const targetId = burger.dataset.target;
-      const targetElement = document.getElementById(targetId);
+  //   navbarBurgers.forEach((burger) => {
+  //     burger.addEventListener("click", () => {
+  //       const targetId = burger.dataset.target;
+  //       const targetElement = document.getElementById(targetId);
 
-      burger.classList.toggle("is-active");
-      targetElement.classList.toggle("is-active");
-    });
-  });
+  //       burger.classList.toggle("is-active");
+  //       targetElement.classList.toggle("is-active");
+  //     });
+  //   });
 
   async function fetchDataFromAPI(url) {
     console.log(url);
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // if (data && data.movies && data.movies.length > 0) {
       // Redirect to movie.html with storageId as a query parameter
-      window.location.href = `movie.html?storageId=${storageId}`;
+      window.location.href = `./movie.php?storageId=${storageId}`;
       // } else {
       //     console.log("No movies found for this storage.");
       //     // Handle the case where no movies are found for this storage
@@ -118,23 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error fetching storage data: ", error);
     }
   }
-
-  // function displayStorage(filteredStorages) {
-  //     const container = document.getElementById("filteredStoragesContainer");
-  //     container.innerHTML = ""; // Clear the container before adding filtered storages
-
-  //     if (filteredStorages.length === 0) {
-  //         container.textContent = "No matching storages found.";
-  //     } else {
-  //         filteredStorages.forEach(storage => {
-  //             const storageElement = document.createElement("div");
-  //             storageElement.classList.add("filtered-storage-item");
-  //             storageElement.textContent = `Name: ${storage.name}, Description: ${storage.description}`;
-  //             container.appendChild(storageElement);
-  //         });
-  //     }
-  // }
-
   window.onload = async function () {
     await getAllMoviesFromStorage();
   };

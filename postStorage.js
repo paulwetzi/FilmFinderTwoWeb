@@ -46,7 +46,7 @@ async function handleFormSubmission() {
     await postStorage(name, description);
 
     // Redirect the user to storage.html after successful form submission
-    window.location.href = "storage.html";
+    window.location.href = "./storage.php";
 }
 
   

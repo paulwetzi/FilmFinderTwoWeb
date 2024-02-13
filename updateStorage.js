@@ -47,7 +47,7 @@ async function updateStorage(newName) {
     // Optional: Display a user-friendly success message
 
     // Redirect to storage.html after successful deletion
-    window.location.href = `/movie.html?storageId=${storageId}`;
+    window.location.href = `./movie.php?storageId=${storageId}`;
 
   } catch (error) {
     console.error("Error updating storage:", error);

@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         await postMovie(title, storageId);
 
         // Redirect the user to movie.html with the storageId after successful form submission
-        window.location.href = `movie.html?storageId=${storageId}`;
+        window.location.href = `./movie.php?storageId=${storageId}`;
     }
 
     document

@@ -1,15 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const submitButton = document.getElementById("submitButton");
   const titleInput = document.getElementById("titleInput");
+  const descriptionInput = document.getElementById("descriptionInput");
 
   // Add an event listener to the submit button
   submitButton.addEventListener("click", async () => {
     const newName = titleInput.value.trim();
+    const newDescription = descriptionInput.value.trim();
 
-    if (newName) {
-      await updateStorage(newName);
+    if (newName && newDescription) {
+      await updateStorage(newName, newDescription);
       // Optional: Clear the input field after a successful update
       titleInput.value = "";
+      descriptionInput.value = "";
     } else {
       console.error("Please enter a valid name.");
       // Optional: Display a user-friendly message if input is empty
@@ -17,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-async function updateStorage(newName) {
+async function updateStorage(newName, newDescription) {
   const apiUrl = `http://localhost:5043/Storage/PutStorage`;
 
   // Retrieve storageId from the URL
@@ -27,7 +30,8 @@ async function updateStorage(newName) {
   // Create an object with the data to send
   const dataToSend = {
     name: newName,
-    id: parseInt(storageId), // Convert storageId to integer since your DTO expects an integer
+    description: newDescription,
+    id: parseInt(storageId),
   };
 
   try {

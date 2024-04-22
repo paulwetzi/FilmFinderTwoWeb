@@ -1,0 +1,155 @@
+:root {
+  --first: #f7f7f7;
+  --second: #393e46;
+  --third: #5c636e;
+  --fourth: #f8b500;
+}
+
+#logo {
+  max-height: none;
+}
+
+#logoItem {
+  padding: 0rem;
+}
+
+.navbar-burger {
+  height: 4.375rem;
+  width: 4.375rem;
+}
+
+.dropdown-trigger .button { /* */
+  border: none;
+  background: none;
+  /* color: inherit; */
+  justify-content: flex-end;
+  padding-right: 15px;
+} 
+
+.is-primary {
+  background-color: var(--fourth) !important;
+  border-color: var(--fourth) !important;
+}
+
+.is-primary:hover {
+  background-color: darken(--fourth, 10%) !important;
+  border-color: darken(--fourth, 10%) !important;
+}
+
+body {
+  background-color: var(--second);
+  color: var(--third);
+}
+
+.navbar {
+  background-color: var(--second);
+}
+
+.button.is-light {
+  background-color: var(--first);
+  color: var(--third);
+}
+
+.button.is-light:hover {
+  background-color: darken(--second, 10%);
+  color: var(--third);
+}
+
+h1 {
+  color: var(--first);
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#search-input::placeholder,
+.input::placeholder {
+  color: var(--first);
+}
+
+#search-input,
+.input {
+  color: var(--first);
+  border-color: var(--second);
+  background-color: var(--third);
+}
+
+.title {
+  color: var(--first);
+}
+
+.Flex-Container {
+  background-color: var(--third);
+  /* Replace #desiredColor with your desired background color value */
+  color: var(--second);
+  /* Replace #textColor with your desired text color value */
+}
+
+/* Increasing specificity */
+html .button.is-primary {
+  background-color: var(--fourth);
+  border-color: transparent;
+  color: var(--second);
+}
+
+/* Or using !important (use as a last resort) */
+.button.is-primary {
+  background-color: var(--fourth) !important;
+  border-color: transparent !important;
+  color: var(--second) !important;
+}
+
+.card {
+  color: var(--first);
+}
+
+.card-content {
+  padding: 20px;
+  background-color: var(--third);
+}
+
+.card-footer-item {
+  background-color: var(--fourth);
+  color: black;
+}
+#imdbLink {
+  color: black;
+}
+
+a {
+  color: var(--first);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: table;
+  margin: 0;
+}
+#top,
+#bottom {
+  width: 100%;
+  background: yellow;
+  display: table-row;
+}
+#top {
+  height: 50px;
+}
+#bottom {
+  background: lightgrey;
+  height: 100%;
+}
